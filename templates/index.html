@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Shorten URL</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/styles/main.css">
+</head>
+<body bgcolor="#cccccc">
+	<hr size="5" align="center" noshade width="90%" color="white">
+	<h1>
+	<font color="white">Shorten URL</font>
+	</h1>
+	<hr size="5" align="center" noshade width="90%" color="white">
+	{% if not shorten_url %}
+	<form action="/submit" method="POST">
+		<label for="">
+		<font color="white">
+		Please input the url you want be shorten.<br>
+                ex. http://www.google.com<br>
+		</font>
+		</label>
+		<input type="text" name="orginal_url">
+		<button type="submit">submit</button>
+	</form>
+	{% endif %}
+
+        {% if shorten_url %}
+	<span>{{ orginal_url }}</span><br>
+	<span></span><br>
+        <span>shorten url is </span><br>
+        <span></span><br>
+	<span>http://54.179.135.121/{{ shorten_url }}</span><br>
+	</form>
+        {% endif %}
+</body>
+</html>
