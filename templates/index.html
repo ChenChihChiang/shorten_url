@@ -7,18 +7,20 @@
 	<link rel="stylesheet" href="/static/styles/main.css">
 </head>
 <body bgcolor="#cccccc">
-	<hr size="5" align="center" noshade width="90%" color="white">
+	<hr size="5" align="center" noshade width="90%" color="black">
 	<h1>
-	<font color="white">Shorten URL</font>
+	<font color="black">Shorten URL</font>
 	</h1>
-	<hr size="5" align="center" noshade width="90%" color="white">
+	<hr size="5" align="center" noshade width="90%" color="black">
 	{% if not shorten_url %}
 	<form action="/submit" method="POST">
 		<label for="">
-		<font color="white">
-		Please input the url you want be shorten.<br>
+                <span></span><br>
+		<font color="black">
+		Please input the url you want be shorten.<br><br>
                 ex. http://www.google.com<br>
 		</font>
+                <span></span><br>
 		</label>
 		<input type="text" name="orginal_url">
 		<button type="submit">submit</button>
@@ -31,7 +33,7 @@
 	<span></span><br>
         <span>shorten url is </span><br>
         <span></span><br>
-        <a href="http://13.229.58.232/{{ shorten_url }}" target="_blank" title="http://13.229.58.232/{{ shorten_url }}">http://13.229.58.232/{{ shorten_url }}</a>
+        <a href="http://webapp-lb-658889317.ap-southeast-1.elb.amazonaws.com/{{ shorten_url }}" target="_blank" title="http://webapp-lb-658889317.ap-southeast-1.elb.amazonaws.com/{{ shorten_url }}">http://webapp-lb-658889317.ap-southeast-1.elb.amazonaws.com/{{ shorten_url }}</a>
 	</form>
         {% endif %}
 </body>
