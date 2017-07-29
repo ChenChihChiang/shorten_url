@@ -36,13 +36,18 @@ def get_shorten_url():
 @app.route('/<s_url>', methods=['GET'])
 def url_mapping(s_url):
 
-    url = r.get('%s' % s_url)
+    if s_url:
+
+        url = r.get('%s' % s_url)
    
-    o_url = url.decode()
+        o_url = url.decode()
 
-    print (o_url)
+        return redirect(o_url, code=301)
+    
+    else:
+        
+        return render_template('index.html')
 
-    return redirect(o_url, code=301)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=80,debug=True)
