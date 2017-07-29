@@ -27,7 +27,7 @@ def get_shorten_url():
     
     shorten_url = id_generator()
     orginal_url = request.form.get('orginal_url')
-    
+
     r.set(shorten_url, orginal_url)    
 
     return render_template('index.html', shorten_url=shorten_url, orginal_url=orginal_url)
