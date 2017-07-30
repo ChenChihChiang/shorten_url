@@ -12,7 +12,7 @@
 	<font color="black">Shorten URL</font>
 	</h1>
 	<hr size="5" align="center" noshade width="90%" color="black">
-	{% if not shorten_url %}
+	{% if not shorten_url or not orginal_url %}
 	<form action="/submit" method="POST">
 		<label for="">
                 <span></span><br>
@@ -27,7 +27,7 @@
 	</form>
 	{% endif %}
 
-        {% if shorten_url or orginal_url %}
+        {% if shorten_url and orginal_url %}
         <span></span><br>
 	<span>{{ orginal_url }}</span><br>
 	<span></span><br>
